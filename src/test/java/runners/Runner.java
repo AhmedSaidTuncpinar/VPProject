@@ -1,8 +1,9 @@
 package runners;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.*;
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -12,17 +13,23 @@ import org.junit.runner.*;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt",
-
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        monochrome=true,
+        monochrome= true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
         tags = "@US001_TC001_UI"
 
+
+
+
 )
+
+
 public class Runner {
 }
+
 /*
  features = "./src/test/resources/features",//PATH OF FEATURES FOLDER
  glue = "stepdefinitions", //PATH OF STEP DEFINITIONS
